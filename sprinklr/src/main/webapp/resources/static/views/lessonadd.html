@@ -1,0 +1,58 @@
+<style>
+.label_left{
+	float:left;
+	margin-bottom:-7px;
+}
+.float_right{
+	float:right;
+	width:225px;
+}
+.text-Control{
+	height:35px;
+}
+</style>
+<div style="height: 100%; background:rgb(242,242,246);">
+<ng-form style="background:rgb(242,242,246);" novalidate name="createclasssDialog">
+<div id = "header" style="height:100px; background:#7986CB;">
+	
+	<div id = "classroom" style="padding:25px; color:#ffffff; font-size:2.0em">
+		
+		<span style="padding: 0px 30px; float:left">
+		Upload Video</span>
+		<div class="float_right">
+		<button type="button" class="btn btn-default" style="float:left; border-radius:14px; background:none; color:white; margin-right:2%; width:90px;" ng-click="save()" ng-disabled="(createclasssDialog.$dirty && createclasssDialog.$invalid) || createclasssDialog.$pristine">Save</button>
+		<button type="button" class="btn btn-default" style="float:left; border-radius:14px; background:none; color:white; margin-left:2%; width:90px;" ng-click="cancel()">Cancel</button>
+		
+		</div>
+	</div>
+	
+</div>
+
+<div class="container" align = "center" style="background:#fff; padding-left:10%; padding-right:10%; padding-bottom:10%; width:60%; height:calc(100% - 100px); box-sizing: border-box;" >
+    <div class="row" align="center" style="margin:3% 12%;">
+
+    <div class="form-group input-group-lg" ng-class="{true: 'has-error'}[createclasssDialog.titleLesson.$dirty && createclasssDialog.titleLesson.$invalid]">
+        <label for="titleLesson" class="label_left">Title</label>
+        <input type="text" class="form-control text-Control" id="titleLesson" name="titleLesson" placeholder="Please select your desired title" ng-model="classroom.title" ng-required="true" style="height:35px;font-size:14px;">
+    	<!-- <span ng-show="form.titleLesson.$error.required">The value is required!</span> -->
+    </div>
+    
+    <div class="form-group input-group-lg" ng-class="{true: 'has-error'}[createclasssDialog.descriptionLesson.$dirty && createclasssDialog.descriptionLesson.$invalid]">
+        <label for="descriptionLesson" class="label_left">Description</label>
+        <textarea  class="form-control" cols ="30" rows="3" id="descriptionLesson" name = "descriptionLesson" placeholder="Explain the purpose of this lesson if anyone has any" ng-model="classroom.description" ng-required="true" style="height:50px; font-size:14px;"></textarea>
+    </div>
+    
+    <div class="form-group input-group-lg" ng-class="{true: 'has-error'}[createclasssDialog.urlLesson.$dirty && createclasssDialog.urlLesson.$invalid]">
+        <label for="urlLesson" class="label_left">Upload Video</label>
+        <input type="text" class="form-control text-Control" id="urlLesson" name = "urlLesson" placeholder="Paste your URL here" ng-model="classroom.url" style="height:35px;font-size:14px;">
+    </div>
+    
+    <div class="form-group input-group-lg" ng-class="{true: 'has-error'}[createclasssDialog.indexLesson.$dirty && createclasssDialog.indexLesson.$invalid]">
+        <label for="descriptionLesson" class="label_left">Index Number</label>
+        <input type="text" class="form-control text-Control" cols ="30" rows="3" id="indexLesson" name = "indexLesson" placeholder="Please select your desired number" ng-model="classroom.indexnumber" style="height:35px;font-size:14px;">
+    </div>
+    
+</div>
+</div>    
+</ng-form>
+</div>
